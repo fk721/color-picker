@@ -1,2 +1,2 @@
-# color-picker
-:art: Generic RGB color picker game
+# rgb Color Game
+Nothing much to say, beginner JavaScript project
