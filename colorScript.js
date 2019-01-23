@@ -19,6 +19,7 @@ function init() {
         if (firstTurn) {
           points += 1;
           score.textContent = "Score: " + points;
+          firstTurn = false;
         }
         response.textContent = "Correct!";
         changeColors(pickedColor);
@@ -27,6 +28,7 @@ function init() {
       else {
         response.textContent = "Try again";
         this.style.backgroundColor = "#2E231D";
+        firstTurn = false;
         points = 0;
         score.textContent = "Score: " + points;
         firstTurn = false;
@@ -43,11 +45,8 @@ resetButton.addEventListener("click", function() {
 function reset() {
   colors = generateRandomColors(6);
   pickedColor = randomColor(colors);
-  if (!firstTurn) {
-    firstTurn = true;
-    points = 0;
-    score.textContent = "Score: " + points;
-  }
+  firstTurn = true;
+  score.textContent = "Score: " + points;
   colorDisplay.textContent = pickedColor;
   for (var i = 0; i < squares.length; ++i) {
     squares[i].style.backgroundColor = colors[i];
